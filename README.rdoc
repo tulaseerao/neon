@@ -3,12 +3,12 @@
 Getting Started
 Clone the repository
 
-Install the gem dependencies
+Install the gem dependencies:
 
-bundle install
+> bundle install
 
-Start the server
-rails s
+Start the server:
+> rails s
 
 Then navigate to localhost:3000 in your browser.
 
