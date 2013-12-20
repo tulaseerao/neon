@@ -2,13 +2,14 @@
 
 Getting Started
 Clone the repository
-Install the gem dependencies (as of version 1.3.0, msyql will need to be installed locally prior to this step)
+
+Install the gem dependencies
 
 bundle install
 
 Start the server
-
 rails s
+
 Then navigate to localhost:3000 in your browser.
 
 This README would normally document whatever steps are necessary to get the
