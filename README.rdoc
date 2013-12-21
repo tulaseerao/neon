@@ -1,5 +1,23 @@
 == README
 
+Getting Started
+Clone the repository
+
+Install the gem dependencies:
+
+> bundle install
+
+Create database
+>rake db:create RAILS_ENV=development
+
+Run DB migration
+>rake db:migrate RAILS_ENV=development
+
+Start the server:
+> rails s
+
+Then navigate to localhost:3000 in your browser.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
