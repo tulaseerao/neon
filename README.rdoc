@@ -7,8 +7,11 @@ Install the gem dependencies:
 
 > bundle install
 
-Create databse
+Create database
 >rake db:create RAILS_ENV=development
+
+Run DB migration
+>rake db:migrate RAILS_ENV=development
 
 Start the server:
 > rails s
