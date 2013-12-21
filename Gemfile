@@ -30,8 +30,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise', '3.0.0.rc'
 gem 'protected_attributes'
 
-
 gem "twitter-bootstrap-rails"
+gem 'roo' #excel upload
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
