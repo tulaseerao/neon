@@ -32,12 +32,19 @@ gem 'protected_attributes'
 
 
 gem "twitter-bootstrap-rails"
+gem 'roo' #excel upload
+gem 'lazy_high_charts'
+gem 'haml-rails', '>= 0.3.4'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem 'better_errors'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
