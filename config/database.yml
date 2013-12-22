@@ -3,5 +3,5 @@ development:
   database: neon
   host: localhost
   username: root
-  password: 
+  password: tulasi
   encoding: 'utf8'

@@ -10,6 +10,11 @@ Neon::Application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  
+  get "/graph", to: "charts#graph",  as: "graph"
+  get "/pie", to: "charts#pie",  as: "pie"
+  get "/bar", to: "charts#bar",  as: "bar"
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
