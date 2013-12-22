@@ -32,6 +32,8 @@ gem 'protected_attributes'
 
 gem "twitter-bootstrap-rails"
 gem 'roo' #excel upload
+gem 'lazy_high_charts'
+
 
 
 group :doc do
@@ -39,6 +41,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem 'better_errors'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
