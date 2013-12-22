@@ -1,5 +1,7 @@
 Neon::Application.routes.draw do
 
+  resources :devices
+
   devise_for :users,  :controllers => {:sessions => "sessions"},:path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}  #devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
