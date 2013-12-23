@@ -11,6 +11,11 @@ class DevicesController < ApplicationController
   # GET /devices/1.json
   def show
   end
+  
+  def import
+   Device.import(params[:file])
+   redirect_to devices_path, notice: "decorations imported."
+  end
 
   # GET /devices/new
   def new

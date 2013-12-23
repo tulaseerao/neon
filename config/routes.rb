@@ -1,6 +1,8 @@
 Neon::Application.routes.draw do
 
-  resources :devices
+  resources :devices do
+      collection { post :import }
+  end
 
   devise_for :users,  :controllers => {:sessions => "sessions"},:path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}  #devise_for :users
 
