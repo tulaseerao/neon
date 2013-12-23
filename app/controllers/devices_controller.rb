@@ -14,7 +14,7 @@ class DevicesController < ApplicationController
   
   def import
    Device.import(params[:file])
-   redirect_to devices_path, notice: "decorations imported."
+   redirect_to devices_path, notice: "Devices imported."
   end
 
   # GET /devices/new
