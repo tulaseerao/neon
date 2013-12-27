@@ -3,7 +3,7 @@ class Device < ActiveRecord::Base
   def self.import(file)
     spreadsheet = Import::Uploader.open_spreadsheet(file)
     header = spreadsheet.row(1).map { |value|
-      value.downcase.gsub(' ','_')
+      value.parameterize.underscore
     }
     logger.info "Header::>>#{header}"
     (2..spreadsheet.last_row).each do |i|
