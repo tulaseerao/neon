@@ -7,6 +7,7 @@
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:name)
       %th= model_class.human_attribute_name(:brand)
+      %th= model_class.human_attribute_name(:device_type)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
@@ -15,6 +16,7 @@
         %td= link_to device.id, device_path(device)
         %td= device.name
         %td= device.brand
+        %td= device.device_type
         %td=l device.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_device_path(device), :class => 'btn btn-mini'
