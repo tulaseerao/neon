@@ -11,11 +11,76 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131222225635) do
+ActiveRecord::Schema.define(version: 20131226041820) do
+
+  create_table "av_interactives", force: true do |t|
+    t.string   "brand"
+    t.string   "device_type"
+    t.string   "location"
+    t.string   "model"
+    t.string   "asset_tag"
+    t.string   "serial_no"
+    t.string   "status"
+    t.string   "value"
+    t.text     "lease"
+    t.text     "lease_term"
+    t.string   "owner"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "computer_timelines", force: true do |t|
+    t.string   "device"
+    t.date     "date_of_service"
+    t.integer  "qty"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "devices", force: true do |t|
     t.text     "name"
     t.text     "brand"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "device_type"
+    t.string   "assignment"
+    t.string   "location"
+    t.string   "change_location"
+    t.date     "date_in_service"
+    t.string   "asset_tag"
+    t.string   "serial_no"
+    t.date     "disposal_date"
+    t.string   "mac1"
+    t.string   "mac2"
+    t.string   "cpu"
+    t.integer  "ghz"
+    t.string   "core"
+    t.string   "hdd"
+    t.string   "screen"
+  end
+
+  create_table "idevices", force: true do |t|
+    t.string   "name"
+    t.string   "device_type"
+    t.string   "model_number"
+    t.string   "hd_capacity"
+    t.string   "serial_no"
+    t.string   "asset_tag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "printers", force: true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.string   "host"
+    t.string   "ip_address"
+    t.string   "win7"
+    t.string   "winxp"
+    t.string   "asset_tag"
+    t.string   "serial_no"
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
