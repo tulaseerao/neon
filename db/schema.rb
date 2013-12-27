@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20131226041820) do
     t.string   "win7"
     t.string   "winxp"
     t.string   "asset_tag"
-    t.string   "serial_no"
+    t.string   "serial_number"
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"

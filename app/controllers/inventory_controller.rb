@@ -6,7 +6,7 @@ class InventoryController < ApplicationController
   
   def import
    Inventory.import(params[:file])
-   redirect_to inventory_path, notice: "Devices imported."
+   redirect_to inventory_path, notice: "Inventory imported."
   end
 
 end

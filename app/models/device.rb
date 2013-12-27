@@ -23,7 +23,11 @@ class Device < ActiveRecord::Base
   }
   
   def self.submit_sheet(spreadsheet)
-    header = spreadsheet.row(1)
+    #header = spreadsheet.row(1)
+    header = spreadsheet.row(1).map { |value|
+      value.parameterize.underscore
+    }
+    logger.info "########### #{header.inspect}"
     new_header = Array.new
     header.each {|key| 
       if !DEVICE_ATTR_MAPPING.invert[key].to_s.blank? 
@@ -35,10 +39,8 @@ class Device < ActiveRecord::Base
     logger.info "NEW HEADER:::: #{new_header.inspect}"
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[new_header, spreadsheet.row(i)].transpose]
-      logger.info "EACH ROW:::: #{row.inspect}"
       device = find_by_name(row["name"]) || new
       device.attributes = row.to_hash.slice(*accessible_attributes)
-      logger.info "################### #{device.inspect}"
       device.save!
      end
   end
