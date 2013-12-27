@@ -1,0 +1,17 @@
+.page-header
+  %h1=t '.title', :default => "Inventory".titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %td= link_to "Devices", devices_path
+      %td= link_to "Idevices", idevices_path
+      %td= link_to "Printers", printers_path
+      %td= link_to "AV Interactive", av_interactives_path
+      %td= link_to "Computer Timeline", computer_timelines_path
+ 
+.sample
+  = form_tag import_devices_path, multipart: true do
+    = file_field_tag :file
+    = submit_tag "Import"
+    
+  = link_to "Sample XLS", '/docs/Sample.xlsx'

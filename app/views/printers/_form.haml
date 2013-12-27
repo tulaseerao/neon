@@ -1,0 +1,49 @@
+= form_for @printer, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :name, :class => 'control-label'
+    .controls
+      = f.text_field :name, :class => 'text_field'
+  
+  .control-group
+    = f.label :location, :class => 'control-label'
+    .controls
+      = f.text_field :location, :class => 'text_field'
+  
+  .control-group
+    = f.label :host, :class => 'control-label'
+    .controls
+      = f.text_field :host, :class => 'text_field'
+  
+  .control-group
+    = f.label :ip_address, :class => 'control-label'
+    .controls
+      = f.text_field :ip_address, :class => 'text_field'
+  
+  .control-group
+    = f.label :win7, :class => 'control-label'
+    .controls
+      = f.text_field :win7, :class => 'text_field'
+  
+  .control-group
+    = f.label :winxp, :class => 'control-label'
+    .controls
+      = f.text_field :winxp, :class => 'text_field'
+  
+  .control-group
+    = f.label :asset_tag, :class => 'control-label'
+    .controls
+      = f.text_field :asset_tag, :class => 'text_field'
+  
+  .control-group
+    = f.label :serial_no, :class => 'control-label'
+    .controls
+      = f.text_field :serial_no, :class => 'text_field'
+  
+  .control-group
+    = f.label :comment, :class => 'control-label'
+    .controls
+      = f.text_field :comment, :class => 'text_field'
+  
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), printers_path, :class => 'btn'

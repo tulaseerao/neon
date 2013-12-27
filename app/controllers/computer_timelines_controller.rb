@@ -1,10 +1,10 @@
-class DevicesController < ApplicationController
+class ComputerTimelinesController < ApplicationController
   before_action :set_device, only: [:show, :edit, :update, :destroy]
 
   # GET /devices
   # GET /devices.json
   def index
-    @devices = Device.all
+    @devices = ComputerTimeline.all
   end
 
   # GET /devices/1
@@ -12,14 +12,9 @@ class DevicesController < ApplicationController
   def show
   end
   
-  def import
-   Inventory.import(params[:file])
-   redirect_to devices_path, notice: "Devices imported."
-  end
-
   # GET /devices/new
   def new
-    @device = Device.new
+    @device = ComputerTimeline.new
   end
 
   # GET /devices/1/edit
@@ -29,7 +24,7 @@ class DevicesController < ApplicationController
   # POST /devices
   # POST /devices.json
   def create
-    @device = Device.new(device_params)
+    @device = ComputerTimeline.new(device_params)
 
     respond_to do |format|
       if @device.save
@@ -61,7 +56,7 @@ class DevicesController < ApplicationController
   def destroy
     @device.destroy
     respond_to do |format|
-      format.html { redirect_to devices_url }
+      format.html { redirect_to computer_timelines_url }
       format.json { head :no_content }
     end
   end
@@ -69,12 +64,11 @@ class DevicesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_device
-      @device = Device.find(params[:id])
+      @device = ComputerTimeline.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def device_params
-      params.require(:device).permit(:name, :brand, :device_type, :assignment, :location, :change_location, :date_in_service, 
-                                     :asset_tag, :serial_no, :disposal_date, :mac1, :mac2, :cpu, :ghz, :core, :hdd, :screen, :key)
+      params.require(:computer_timeline).permit(:device, :date_of_service, :qty)
     end
 end

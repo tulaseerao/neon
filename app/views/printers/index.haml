@@ -1,0 +1,29 @@
+- model_class = Printer
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:location)
+      %th= model_class.human_attribute_name(:asset_tag)
+      %th= model_class.human_attribute_name(:serial_no)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @printers.each do |printer|
+      %tr
+        %td= link_to printer.id, printer_path(printer)
+        %td= printer.name
+        %td= printer.location
+        %td= printer.asset_tag
+        %td= printer.serial_no
+        %td=l printer.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_printer_path(printer), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), printer_path(printer), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_printer_path, :class => 'btn btn-primary'
+%br/
+%br/

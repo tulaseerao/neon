@@ -1,0 +1,64 @@
+= form_for @device, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :brand, :class => 'control-label'
+    .controls
+      = f.text_field :brand, :class => 'text_field'
+  
+  .control-group
+    = f.label :device_type, :class => 'control-label'
+    .controls
+      = f.text_field :device_type, :class => 'text_field'
+  
+  .control-group
+    = f.label :location, :class => 'control-label'
+    .controls
+      = f.text_field :location, :class => 'text_field'
+  
+  .control-group
+    = f.label :model, :class => 'control-label'
+    .controls
+      = f.text_field :model, :class => 'text_field'
+  
+  .control-group
+    = f.label :asset_tag, :class => 'control-label'
+    .controls
+      = f.text_field :asset_tag, :class => 'text_field'
+  
+  .control-group
+    = f.label :serial_no, :class => 'control-label'
+    .controls
+      = f.text_field :serial_no, :class => 'text_field'
+  
+  .control-group
+    = f.label :status, :class => 'control-label'
+    .controls
+      = f.text_field :status, :class => 'text_field'
+  
+  .control-group
+    = f.label :value, :class => 'control-label'
+    .controls
+      = f.text_field :value, :class => 'text_field'
+  
+  .control-group
+    = f.label :lease, :class => 'control-label'
+    .controls
+      = f.text_field :lease, :class => 'text_field'
+  
+  .control-group
+    = f.label :lease_term, :class => 'control-label'
+    .controls
+      = f.text_field :lease_term, :class => 'text_field'
+  
+  .control-group
+    = f.label :owner, :class => 'control-label'
+    .controls
+      = f.text_field :owner, :class => 'text_field'
+  
+  .control-group
+    = f.label :notes, :class => 'control-label'
+    .controls
+      = f.text_field :notes, :class => 'text_field'
+  
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), av_inetractives_path, :class => 'btn'

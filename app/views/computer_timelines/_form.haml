@@ -1,0 +1,19 @@
+= form_for @device, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :device, :class => 'control-label'
+    .controls
+      = f.text_field :device, :class => 'text_field'
+  
+  .control-group
+    = f.label :date_of_service, :class => 'control-label'
+    .controls
+      = f.text_field :date_of_service, :class => 'text_field'
+  
+  .control-group
+    = f.label :qty, :class => 'control-label'
+    .controls
+      = f.text_field :qty, :class => 'text_field'
+  
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), computer_timelines_path, :class => 'btn'

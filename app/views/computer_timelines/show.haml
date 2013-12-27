@@ -1,0 +1,23 @@
+- model_class = ComputerTimeline
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:device) + ':'
+  %br
+  = @device.name
+%p
+  %strong= model_class.human_attribute_name(:date_of_service) + ':'
+  %br
+  = @device.brand
+
+%p
+  %strong= model_class.human_attribute_name(:qty) + ':'
+  %br
+  = @device.brand
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), computer_timeline_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_computer_timeline_path(@device), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), computer_timeline_path(@device), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+

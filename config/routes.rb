@@ -3,6 +3,11 @@ Neon::Application.routes.draw do
   resources :devices do
       collection { post :import }
   end
+  
+  resources :idevices
+  resources :printers
+  resources :av_interactives
+  resources :computer_timelines
 
   devise_for :users,  :controllers => {:sessions => "sessions"},:path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}  #devise_for :users
 
@@ -14,12 +19,12 @@ Neon::Application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-  
+  get "/upload-inventory", to: "inventory#index", as: "upload_inventory" 
   get "/graph", to: "charts#graph",  as: "graph"
   get "/pie", to: "charts#pie",  as: "pie"
   get "/bar", to: "charts#bar",  as: "bar"
 
-
+  post "/inventory/import", to: "inventory#import", as: "import_inventory"
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
