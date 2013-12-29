@@ -1,31 +1,61 @@
 - model_class = Device
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+
 %table.table.table-striped
   %thead
     %tr
       %th= model_class.human_attribute_name(:id)
-      %th= model_class.human_attribute_name(:name)
-      %th= model_class.human_attribute_name(:brand)
-      %th= model_class.human_attribute_name(:created_at)
+      %th= model_class.human_attribute_name(:key)
+      %th= model_class.human_attribute_name(:computer_name)
+      %th= model_class.human_attribute_name(:device_type)
+      %th= model_class.human_attribute_name(:assignment)
+      %th= model_class.human_attribute_name(:location)
+      %th= model_class.human_attribute_name(:change)
+      %th= model_class.human_attribute_name(:date_in_service)
+      %th= model_class.human_attribute_name(:asset_tag)
+      %th= model_class.human_attribute_name(:serial_number)
+      %th= model_class.human_attribute_name(:manufacturer)
+      %th= model_class.human_attribute_name(:disposal_date)
+      %th= model_class.human_attribute_name(:mac1)
+      %th= model_class.human_attribute_name(:mac2)
+      %th= model_class.human_attribute_name(:cpu)
+      %th= model_class.human_attribute_name(:ghz)
+      %th= model_class.human_attribute_name(:core)
+      %th= model_class.human_attribute_name(:hdd)
+      %th= model_class.human_attribute_name(:screen)
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @devices.each do |device|
       %tr
         %td= link_to device.id, device_path(device)
-        %td= device.name
-        %td= device.brand
-        %td=l device.created_at
+        %td= device.key
+        %td= device.computer_name
+        %td= device.device_type
+        %td= device.assignment
+        %td= device.location
+        %td= device.change
+        %td= device.date_in_service
+        %td= device.asset_tag
+        %td= device.serial_number
+        %td= device.manufacturer
+        %td= device.disposal_date
+        %td= device.mac1
+        %td= device.mac2
+        %td= device.cpu
+        %td= device.ghz
+        %td= device.core
+        %td= device.hdd
+        %td= device.screen
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_device_path(device), :class => 'btn btn-mini'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), device_path(device), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
-
+    = will_paginate @devices
 = link_to t('.new', :default => t("helpers.links.new")), new_device_path, :class => 'btn btn-primary'
-%br/
-%br/
+
 .sample
   = form_tag import_devices_path, multipart: true do
     = file_field_tag :file
     = submit_tag "Import"
     
-  = link_to "Sample XLS", '/docs/Sample.xlsx'
+  = link_to "Devices.xlsx", '/docs/Devices.xlsx'

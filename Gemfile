@@ -35,7 +35,8 @@ gem "twitter-bootstrap-rails"
 gem 'roo' #excel upload
 gem 'lazy_high_charts'
 gem 'haml-rails', '>= 0.3.4'
-
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

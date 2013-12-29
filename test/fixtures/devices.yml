@@ -1,9 +1,41 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyText
-  brand: MyText
+  key: MyString
+  computer_name: MyString
+  device_type: MyString
+  assignment: MyString
+  location: MyString
+  change: MyString
+  date_in_service: 2013-12-27
+  asset_tag: MyString
+  serial_number: MyString
+  manufacturer: MyString
+  disposal_date: 2013-12-27
+  mac1: MyString
+  mac2: MyString
+  cpu: MyString
+  ghz: MyString
+  core: MyString
+  hdd: MyString
+  screen: MyString
 
 two:
-  name: MyText
-  brand: MyText
+  key: MyString
+  computer_name: MyString
+  device_type: MyString
+  assignment: MyString
+  location: MyString
+  change: MyString
+  date_in_service: 2013-12-27
+  asset_tag: MyString
+  serial_number: MyString
+  manufacturer: MyString
+  disposal_date: 2013-12-27
+  mac1: MyString
+  mac2: MyString
+  cpu: MyString
+  ghz: MyString
+  core: MyString
+  hdd: MyString
+  screen: MyString

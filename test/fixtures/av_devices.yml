@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  asset_tag: MyString
+  device: MyString
+  location: MyString
+  brand: MyString
+  model: MyString
+  serial_number: MyString
+  value: MyString
+  lease: MyString
+  lease_term: MyString
+  owner_or_teacher: MyString
+  notes: MyText
+
+two:
+  status: MyString
+  asset_tag: MyString
+  device: MyString
+  location: MyString
+  brand: MyString
+  model: MyString
+  serial_number: MyString
+  value: MyString
+  lease: MyString
+  lease_term: MyString
+  owner_or_teacher: MyString
+  notes: MyText

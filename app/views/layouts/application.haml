@@ -1,62 +1,53 @@
-!!!
-%html{lang: "en"}
+!!! 5
+%html(lang="en")
   %head
-    %meta{charset: "utf-8"}/
-    %meta{content: "IE=Edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
-    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %title= content_for?(:title) ? yield(:title) : "Neon"
     = csrf_meta_tags
     / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
     = stylesheet_link_tag "application", :media => "all"
-    / For third-generation iPad with high-resolution Retina display:
-    / Size should be 144 x 144 pixels
     = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
-    / For iPhone with high-resolution Retina display:
-    / Size should be 114 x 114 pixels
     = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
-    / For first- and second-generation iPad:
-    / Size should be 72 x 72 pixels
     = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
-    / For non-Retina iPhone, iPod Touch, and Android 2.1+ devices:
-    / Size should be 57 x 57 pixels
     = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
-    / For all other devices
-    / Size should be 32 x 32 pixels
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
     = javascript_include_tag "application"
+
+
   %body
     .navbar.navbar-fluid-top
       .navbar-inner
         .container-fluid
-          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+          %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand{href: "#"} Neon
-          .container-fluid.nav-collapse
+          %a.brand(href="#") Neon
+          .container.nav-collapse
             %ul.nav
-              %li= link_to "Link1", "/path1"
-              %li= link_to "Link2", "/path2"
-              %li= link_to "Link3", "/path3"
-          / /.nav-collapse
+              %li= link_to "Devices", devices_path
+              %li= link_to "iDevices", idevices_path
+              %li= link_to "Printers", printers_path
+              %li= link_to "AV - Interactive", av_devices_path
+              %li= link_to "Computer Timelines", timelines_path
+              %li= link_to "Upload All", upload_inventory_path
     .container-fluid
+
       .row-fluid
         .span3
           .well.sidebar-nav
             %ul.nav.nav-list
-              %li.nav-header Computer Timeline
-              %li= link_to "Graph", graph_path
-              %li= link_to "Pie", pie_path
-              %li= link_to "Bar", bar_path
-              %li= link_to "Sample Import", devices_path
-          / /.well
-        / /span
+              %li.nav-header Sidebar
+              %li= link_to "Link 1", "/path1"
+              %li= link_to "Link 2", "/path2"
+              %li= link_to "Link 3", "/path3"
         .span9
           = bootstrap_flash
           = yield
-      / /row
+    
       %footer
-        %p © Neon 2013
-    / /container
+        %p &copy; Company 2013

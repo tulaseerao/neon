@@ -1,9 +1,11 @@
 Neon::Application.routes.draw do
 
-  resources :devices do
-      collection { post :import }
+  get "inventory/index"
+  get "inventory/import"
+  resources :timelines, :av_devices, :printers,:idevices, :devices  do
+    collection { post :import }
   end
-
+  
   devise_for :users,  :controllers => {:sessions => "sessions"},:path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}  #devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -18,6 +20,9 @@ Neon::Application.routes.draw do
   get "/graph", to: "charts#graph",  as: "graph"
   get "/pie", to: "charts#pie",  as: "pie"
   get "/bar", to: "charts#bar",  as: "bar"
+  
+  get "/upload", to: "inventory#index", as: "upload_inventory" 
+  post "/inventory/import", to: "inventory#import", as: "import_inventory"
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

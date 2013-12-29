@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  printer: MyString
+  location: MyString
+  host_server: MyString
+  ip_address: MyString
+  win_7: MyString
+  win_xp: MyString
+  asset_tag: MyString
+  serial_number: MyString
+  comment: MyText
+
+two:
+  printer: MyString
+  location: MyString
+  host_server: MyString
+  ip_address: MyString
+  win_7: MyString
+  win_xp: MyString
+  asset_tag: MyString
+  serial_number: MyString
+  comment: MyText

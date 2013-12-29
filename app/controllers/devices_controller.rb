@@ -4,22 +4,23 @@ class DevicesController < ApplicationController
   # GET /devices
   # GET /devices.json
   def index
-    @devices = Device.all
+    # @devices = Device.all
+    @devices = Device.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /devices/1
   # GET /devices/1.json
   def show
   end
-  
-  def import
-   Device.import(params[:file])
-   redirect_to devices_path, notice: "Devices imported."
-  end
 
   # GET /devices/new
   def new
     @device = Device.new
+  end
+  
+  def import
+    Device.import(params[:file])
+    redirect_to devices_path, notice: 'Devices were successfully created.'
   end
 
   # GET /devices/1/edit
@@ -74,6 +75,6 @@ class DevicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def device_params
-      params.require(:device).permit(:name, :brand)
+      params.require(:device).permit(:key, :computer_name, :device_type, :assignment, :location, :change, :date_in_service, :asset_tag, :serial_number, :manufacturer, :disposal_date, :mac1, :mac2, :cpu, :ghz, :core, :hdd, :screen)
     end
 end
