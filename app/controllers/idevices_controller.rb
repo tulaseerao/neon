@@ -1,10 +1,11 @@
 class IdevicesController < ApplicationController
   before_action :set_idevice, only: [:show, :edit, :update, :destroy]
-
+  helper_method :sort_column, :sort_direction
   # GET /idevices
   # GET /idevices.json
   def index
-    @idevices = Idevice.paginate(page: params[:page], per_page: 10)
+    # @idevices = Idevice.paginate(page: params[:page], per_page: 10)
+    @idevices = Idevice.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
   end
 
   # GET /idevices/1
@@ -68,12 +69,19 @@ class IdevicesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_idevice
-      @idevice = Idevice.find(params[:id])
-    end
+  def set_idevice
+    @idevice = Idevice.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def idevice_params
-      params.require(:idevice).permit(:device_type, :model_number, :capacity_hd, :serial_number, :asset_tag, :name)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def idevice_params
+    params.require(:idevice).permit(:device_type, :model_number, :capacity_hd, :serial_number, :asset_tag, :name)
+  end
+  def sort_column
+    Idevice.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
 end

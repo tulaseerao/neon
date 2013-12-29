@@ -29,3 +29,14 @@ $(function() {
     return false;
   });
 });
+
+$(function() {
+  $("#idevices th a, #idevices .pagination a").live("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+  $("#idevices_search input").keyup(function() {
+    $.get($("#idevices_search").attr("action"), $("#idevices_search").serialize(), null, "script");
+    return false;
+  });
+});

@@ -11,4 +11,12 @@ class Idevice < ActiveRecord::Base
     device.attributes = row.to_hash.slice(*accessible_attributes)
     device.save!
   end
+  
+  def self.search(search)
+    if search
+      where('name LIKE ? or device_type LIKE ? or model_number LIKE ? or serial_number LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      scoped
+    end
+  end
 end
