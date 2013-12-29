@@ -74,6 +74,42 @@
   %strong= model_class.human_attribute_name(:screen) + ':'
   %br
   = @device.screen
+  %p
+  %strong= model_class.human_attribute_name(:ethernet_mac_address) + ':'
+  %br
+  = @device.ethernet_mac_address
+%p
+  %strong= model_class.human_attribute_name(:wireless_mac_address) + ':'
+  %br
+  = @device.wireless_mac_address
+%p
+  %strong= model_class.human_attribute_name(:os) + ':'
+  %br
+  = @device.os
+%p
+  %strong= model_class.human_attribute_name(:printer) + ':'
+  %br
+  = @device.printer
+%p
+%strong= model_class.human_attribute_name(:projector) + ':'
+%br
+= @device.projector
+%p
+%strong= model_class.human_attribute_name(:sb) + ':'
+%br
+= @device.sb
+%p
+%strong= model_class.human_attribute_name(:age) + ':'
+%br
+= @device.age
+%p
+%strong= model_class.human_attribute_name(:notes) + ':'
+%br
+= @device.notes
+%p
+%strong= model_class.human_attribute_name(:memory) + ':'
+%br
+= @device.memory
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), devices_path, :class => 'btn'

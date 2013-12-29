@@ -18,3 +18,14 @@
 //= require highcharts/highcharts-more                                                         
 //= require highcharts/highstock
 //= require_tree .
+
+$(function() {
+  $("#devices th a, #devices .pagination a").live("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+  $("#devices_search input").keyup(function() {
+    $.get($("#devices_search").attr("action"), $("#devices_search").serialize(), null, "script");
+    return false;
+  });
+});

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131228031001) do
+ActiveRecord::Schema.define(version: 20131229165511) do
 
   create_table "av_devices", force: true do |t|
     t.string   "status"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 20131228031001) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "change_location"
+    t.string   "ethernet_mac_address"
+    t.string   "wireless_mac_address"
+    t.string   "os"
+    t.string   "printer"
+    t.string   "projector"
+    t.string   "sb"
+    t.decimal  "age",                  precision: 10, scale: 0
+    t.text     "notes"
+    t.string   "memory"
   end
 
   create_table "idevices", force: true do |t|
