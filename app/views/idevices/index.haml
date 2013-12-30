@@ -1,11 +1,11 @@
 - model_class = Idevice
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
-= form_tag idevices_path, :method => 'get', :id => "idevices_search" do
+= form_tag idevices_path, :method => 'get', :id => "devices_search" do
   %p
     = text_field_tag :search, params[:search]
     = submit_tag "Search", :name => nil
-  #idevices= render 'idevices'
+  #devices= render 'idevices'
 
 .sample
   = form_tag import_idevices_path, multipart: true do

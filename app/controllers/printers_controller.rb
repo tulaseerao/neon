@@ -4,7 +4,7 @@ class PrintersController < ApplicationController
   # GET /printers
   # GET /printers.json
   def index
-    @printers = Printer.paginate(page: params[:page], per_page: 10)
+    @printers  = Printer.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
   end
 
   # GET /printers/1
@@ -75,5 +75,13 @@ class PrintersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def printer_params
       params.require(:printer).permit(:printer, :location, :host_server, :ip_address, :win_7, :win_xp, :asset_tag, :serial_number, :comment)
+    end
+    
+    def sort_column
+      Printer.column_names.include?(params[:sort]) ? params[:sort] : "printer"
+    end
+  
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end

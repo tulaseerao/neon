@@ -19,29 +19,41 @@ class Chart
     end
   end
   
+  def self.graph2
+    timeline = Timeline.all.map { |tl|
+      [tl.date_of_service,tl.qty]
+    }
+    LazyHighCharts::HighChart.new('graph') do |f|
+    f.title({ text: "Computer Timelines"})
+    f.options[:xAxis][:categories] = Timeline.all.map {|tl| tl.date_of_service }
+    f.options[:yAxis][:categories] = Timeline.all.map {|tl| tl.qty }
+    f.labels(items: [html: "Computer Timelines", style: {left: "40px", top: "8px", color: "black"} ])      
+    # f.series(type: 'column',name: 'Dave Geesey',data: [3, 2, 1, 3, 4])
+    # f.series(type: 'column',name: 'Kimberly Perry',data: [2, 3, 5, 7, 6])
+    # f.series(type: 'column', name: 'Harrell',data: [4, 3, 3, 9, 0])
+    series = {
+               type:  'column',
+               name:  'Computer Timelines',
+               data:  timeline
+      }
+      f.series(series)
+    end
+  end
   def self.pie
+    
+    timeline = Timeline.all.map { |tl|
+      [tl.device,tl.qty]
+    }
     
     LazyHighCharts::HighChart.new('pie') do |f|
       f.chart({defaultSeriesType: "pie" , margin:  [50, 200, 60, 170]} )
       series = {
                type:  'pie',
-               name:  'Browser share',
-               data:  [
-                  ['Apple',   45.0],
-                  ['Windows',       26.8],
-                  {
-                     name:  'Chromes',    
-                     y:  12.8,
-                     sliced:  true,
-                     selected:  true
-                  },
-                  ['Andriod',    8.5],
-                  ['iPad',     6.2],
-                  ['Others',   0.7]
-               ]
+               name:  'Computer Timelines',
+               data:  timeline
       }
       f.series(series)
-      f.options[:title][:text] = "THA PIE"
+      f.options[:title][:text] = "Computer Timelines"
       f.legend(layout:  'vertical',style:  {left:  'auto', bottom:  'auto',right:  '50px',top:  '100px'}) 
       f.plot_options(pie: {
         allowPointSelect: true, 

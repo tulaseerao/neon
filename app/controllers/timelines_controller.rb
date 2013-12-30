@@ -4,7 +4,7 @@ class TimelinesController < ApplicationController
   # GET /timelines
   # GET /timelines.json
   def index
-    @timelines = Timeline.paginate(page: params[:page], per_page: 10)
+    @timelines = Timeline.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
   end
 
   # GET /timelines/1
@@ -75,5 +75,13 @@ class TimelinesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def timeline_params
       params.require(:timeline).permit(:device, :date_of_service, :qty)
+    end
+    
+    def sort_column
+      Timeline.column_names.include?(params[:sort]) ? params[:sort] : "device"
+    end
+    
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end

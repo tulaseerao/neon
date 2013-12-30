@@ -17,4 +17,12 @@ class AvDevice < ActiveRecord::Base
       where(row).first_or_create  
     end
   end
+  
+   def self.search(search)
+    if search
+      where('device LIKE ? or brand LIKE ? or status LIKE ? or owner_or_teacher LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      scoped
+    end
+  end
 end

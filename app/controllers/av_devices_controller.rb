@@ -4,7 +4,7 @@ class AvDevicesController < ApplicationController
   # GET /av_devices
   # GET /av_devices.json
   def index
-    @av_devices = AvDevice.paginate(page: params[:page], per_page: 10)
+    @av_devices = AvDevice.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
   end
 
   # GET /av_devices/1
@@ -75,5 +75,13 @@ class AvDevicesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def av_device_params
       params.require(:av_device).permit(:status, :asset_tag, :device, :location, :brand, :model, :serial_number, :value, :lease, :lease_term, :owner_or_teacher, :notes)
+    end
+    
+    def sort_column
+      AvDevice.column_names.include?(params[:sort]) ? params[:sort] : "brand"
+    end
+  
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end

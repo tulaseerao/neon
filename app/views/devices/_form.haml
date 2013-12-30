@@ -71,6 +71,42 @@
     = f.label :screen, :class => 'control-label'
     .controls
       = f.text_field :screen, :class => 'text_field'
+  .control-group
+    = f.label :ethernet_mac_address, :class => 'control-label'
+    .controls
+      = f.text_field :ethernet_mac_address, :class => 'text_field'
+  .control-group
+    = f.label :wireless_mac_address, :class => 'control-label'
+    .controls
+      = f.text_field :wireless_mac_address, :class => 'text_field'
+  .control-group
+    = f.label :os, :class => 'control-label'
+    .controls
+      = f.text_field :os, :class => 'text_field'
+  .control-group
+    = f.label :printer, :class => 'control-label'
+    .controls
+      = f.text_field :printer, :class => 'text_field'
+  .control-group
+    = f.label :projector, :class => 'control-label'
+    .controls
+      = f.text_field :projector, :class => 'text_field'
+  .control-group
+    = f.label :age, :class => 'control-label'
+    .controls
+      = f.text_field :age, :class => 'text_field'
+  .control-group
+    = f.label :sb, :class => 'control-label'
+    .controls
+      = f.text_field :sb, :class => 'text_field'
+  .control-group
+    = f.label :memory, :class => 'control-label'
+    .controls
+      = f.text_field :memory, :class => 'text_field'
+
+
+
+      
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), devices_path, :class => 'btn'

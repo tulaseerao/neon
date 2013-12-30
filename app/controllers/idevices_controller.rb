@@ -1,6 +1,5 @@
 class IdevicesController < ApplicationController
   before_action :set_idevice, only: [:show, :edit, :update, :destroy]
-  helper_method :sort_column, :sort_direction
   # GET /idevices
   # GET /idevices.json
   def index

@@ -1,5 +1,5 @@
 class Printer < ActiveRecord::Base
-   attr_accessible :printer, :location, :host_or_server, :ip_address, :win_7, :win_xp, :asset_tag, :serial_number, :comment
+   attr_accessible :printer, :location, :host_server, :ip_address, :win_7, :win_xp, :asset_tag, :serial_number, :comment
 
   def self.import(file)
      spreadsheet = Import::Uploader.open_spreadsheet(file)
@@ -14,6 +14,14 @@ class Printer < ActiveRecord::Base
       device.save!
     else
       where(row).first_or_create  
+    end
+  end
+  
+  def self.search(search)
+    if search
+      where('printer LIKE ? or host_server LIKE ? or location LIKE ? or serial_number LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      scoped
     end
   end
 end

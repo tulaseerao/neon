@@ -1,6 +1,5 @@
 class DevicesController < ApplicationController
   before_action :set_device, only: [:show, :edit, :update, :destroy]
-  helper_method :sort_column, :sort_direction
   # GET /devices
   # GET /devices.json
   def index

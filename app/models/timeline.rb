@@ -11,4 +11,12 @@ class Timeline < ActiveRecord::Base
     device.attributes = row.to_hash.slice(*accessible_attributes)
     device.save!
   end
+  
+  def self.search(search)
+    if search
+      where('device LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
 end
