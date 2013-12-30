@@ -1,6 +1,6 @@
 - model_class = Idevice
 .page-header
-  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+  %h1=t '.title', :default => "iDevices"
 = form_tag idevices_path, :method => 'get', :id => "devices_search" do
   %p
     = text_field_tag :search, params[:search]
