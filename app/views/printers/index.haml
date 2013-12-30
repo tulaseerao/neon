@@ -1,11 +1,7 @@
 - model_class = Printer
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
-= form_tag printers_path, :method => 'get', :id => "devices_search" do
-  %p
-    = text_field_tag :search, params[:search]
-    = submit_tag "Search", :name => nil
-  #devices= render 'printers'
+= render partial: '/shared/search', locals:{partial: 'printers', path: printers_path}  
 
 
 .sample

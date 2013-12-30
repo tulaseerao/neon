@@ -1,12 +1,7 @@
 - model_class = Device
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
-  
-= form_tag devices_path, :method => 'get', :id => "devices_search" do
-  %p
-    = text_field_tag :search, params[:search]
-    = submit_tag "Search", :name => nil
-  #devices= render 'devices'
+ = render partial: '/shared/search', locals:{partial: 'devices', path: devices_path}
 
 .sample
   = form_tag import_devices_path, multipart: true do

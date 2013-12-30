@@ -2,12 +2,7 @@
 .page-header
   %h1=t '.title', :default => "Audio / Visual Interactive Devices"
   %h3=t '.sub_title',:default => "SmartBoards, Document Cameras, Projectors, Sound Equipment, Overhead, etc…" 
-= form_tag av_devices_path, :method => 'get', :id => "devices_search" do
-  %p
-    = text_field_tag :search, params[:search]
-    = submit_tag "Search", :name => nil
-  #devices= render 'avdevices'
-  
+= render partial: '/shared/search', locals:{partial: 'avdevices', path: av_devices_path}  
 
 .sample
   = form_tag import_av_devices_path, multipart: true do

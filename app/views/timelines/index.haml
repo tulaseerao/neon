@@ -1,13 +1,7 @@
 - model_class = Timeline
 .page-header
   %h1=t '.title', :default => "Computer Hardware Timeline"
-= form_tag timelines_path, :method => 'get', :id => "devices_search" do
-  %p
-    = text_field_tag :search, params[:search]
-    = submit_tag "Search", :name => nil
-  #devices= render 'timelines'
-
-
+= render partial: '/shared/search', locals:{partial: 'timelines', path: timelines_path}  
 
 .sample
   = form_tag import_timelines_path, multipart: true do
