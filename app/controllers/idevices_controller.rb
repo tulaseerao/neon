@@ -1,5 +1,6 @@
 class IdevicesController < ApplicationController
   before_action :set_idevice, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
   # GET /idevices
   # GET /idevices.json
   def index

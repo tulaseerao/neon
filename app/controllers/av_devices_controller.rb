@@ -1,6 +1,6 @@
 class AvDevicesController < ApplicationController
   before_action :set_av_device, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /av_devices
   # GET /av_devices.json
   def index

@@ -1,16 +1,7 @@
 - model_class = Idevice
 .page-header
   %h1=t '.title', :default => "iDevices"
-= form_tag idevices_path, :method => 'get', :id => "devices_search" do
-  %p
-    = text_field_tag :search, params[:search]
-    = submit_tag "Search", :name => nil
-  #devices= render 'idevices'
+= render partial: '/shared/search', locals:{partial: 'idevices', path: idevices_path}
+= render '/shared/import', file_name: "iDevices.xlsx", import_path: import_idevices_path
 
-.sample
-  = form_tag import_idevices_path, multipart: true do
-    = file_field_tag :file
-    = submit_tag "Import"
-    
-  = link_to "iDevices.xlsx", '/docs/iDevices.xlsx'
 

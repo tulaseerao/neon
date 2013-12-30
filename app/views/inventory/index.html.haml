@@ -1,6 +1,1 @@
-.sample
-  = form_tag import_inventory_path, multipart: true do
-    = file_field_tag :file
-    = submit_tag "Import"
-    
-  = link_to "Upload All", '/docs/Upload_all.xlsx'
+= render '/shared/import', file_name: "Upload_all.xlsx", import_path: import_inventory_path

@@ -3,11 +3,4 @@
   %h1=t '.title', :default => "Audio / Visual Interactive Devices"
   %h3=t '.sub_title',:default => "SmartBoards, Document Cameras, Projectors, Sound Equipment, Overhead, etc…" 
 = render partial: '/shared/search', locals:{partial: 'avdevices', path: av_devices_path}  
-
-.sample
-  = form_tag import_av_devices_path, multipart: true do
-    = file_field_tag :file
-    = submit_tag "Import"
-    
-  = link_to "AVDevices.xlsx", '/docs/AvDevices.xlsx'
-
+= render '/shared/import', file_name: "AVDevices.xlsx", import_path: import_av_devices_path

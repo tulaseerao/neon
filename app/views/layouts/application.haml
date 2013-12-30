@@ -35,6 +35,11 @@
               %li= link_to "AV - Interactive", av_devices_path
               %li= link_to "Computer Timelines", timelines_path
               %li= link_to "Upload All", upload_inventory_path
+            .container-fluid
+              .row-fluid
+                - if user_signed_in?
+                  Signed in as #{current_user.email}. Not you?
+                  \#{link_to "Sign out", destroy_user_session_path}  
     .container-fluid
 
       .row-fluid

@@ -2,12 +2,4 @@
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
 = render partial: '/shared/search', locals:{partial: 'printers', path: printers_path}  
-
-
-.sample
-  = form_tag import_printers_path, multipart: true do
-    = file_field_tag :file
-    = submit_tag "Import"
-    
-  = link_to "Printers.xlsx", '/docs/Printers.xlsx'
-
+= render '/shared/import', file_name: "Printers.xlsx", import_path: import_printers_path
