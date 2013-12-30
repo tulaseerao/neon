@@ -1,7 +1,7 @@
 - model_class = Device
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
- = render partial: '/shared/search', locals:{partial: 'devices', path: devices_path}
+= render partial: '/shared/search', locals:{partial: 'devices', path: devices_path}
 
 .sample
   = form_tag import_devices_path, multipart: true do
