@@ -12,4 +12,3 @@ production:
   database: postgres_production
   pool: 5
   username: postgres
-  password  
