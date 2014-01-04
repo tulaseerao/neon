@@ -4,12 +4,13 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
-group :development do
+group :development do 
     gem 'mysql2', '0.3.11'
 end
 
 group :production do
-    gem 'pg' 
+    gem 'pg'
+    gem 'rails_12factor'
 end
 
 # Use SCSS for stylesheets
@@ -36,6 +37,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise', '3.0.0.rc'
 gem 'protected_attributes'
 
+
 gem "twitter-bootstrap-rails"
 gem 'roo' #excel upload
 gem 'lazy_high_charts'
@@ -50,6 +52,7 @@ end
 
 group :development do
   gem 'better_errors'
+#   gem 'thin'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
