@@ -5,3 +5,11 @@ development:
   username: mikeodell77
   password: 
   port: 3306
+  
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: postgres_production
+  pool: 5
+  username: postgres
+  password  
