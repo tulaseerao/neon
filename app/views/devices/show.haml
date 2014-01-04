@@ -1,0 +1,117 @@
+- model_class = Device
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:key) + ':'
+  %br
+  = @device.key
+%p
+  %strong= model_class.human_attribute_name(:computer_name) + ':'
+  %br
+  = @device.computer_name
+%p
+  %strong= model_class.human_attribute_name(:device_type) + ':'
+  %br
+  = @device.device_type
+%p
+  %strong= model_class.human_attribute_name(:assignment) + ':'
+  %br
+  = @device.assignment
+%p
+  %strong= model_class.human_attribute_name(:location) + ':'
+  %br
+  = @device.location
+%p
+  %strong= model_class.human_attribute_name(:change) + ':'
+  %br
+  = @device.change
+%p
+  %strong= model_class.human_attribute_name(:date_in_service) + ':'
+  %br
+  = @device.date_in_service
+%p
+  %strong= model_class.human_attribute_name(:asset_tag) + ':'
+  %br
+  = @device.asset_tag
+%p
+  %strong= model_class.human_attribute_name(:serial_number) + ':'
+  %br
+  = @device.serial_number
+%p
+  %strong= model_class.human_attribute_name(:manufacturer) + ':'
+  %br
+  = @device.manufacturer
+%p
+  %strong= model_class.human_attribute_name(:disposal_date) + ':'
+  %br
+  = @device.disposal_date
+%p
+  %strong= model_class.human_attribute_name(:mac1) + ':'
+  %br
+  = @device.mac1
+%p
+  %strong= model_class.human_attribute_name(:mac2) + ':'
+  %br
+  = @device.mac2
+%p
+  %strong= model_class.human_attribute_name(:cpu) + ':'
+  %br
+  = @device.cpu
+%p
+  %strong= model_class.human_attribute_name(:ghz) + ':'
+  %br
+  = @device.ghz
+%p
+  %strong= model_class.human_attribute_name(:core) + ':'
+  %br
+  = @device.core
+%p
+  %strong= model_class.human_attribute_name(:hdd) + ':'
+  %br
+  = @device.hdd
+%p
+  %strong= model_class.human_attribute_name(:screen) + ':'
+  %br
+  = @device.screen
+  %p
+  %strong= model_class.human_attribute_name(:ethernet_mac_address) + ':'
+  %br
+  = @device.ethernet_mac_address
+%p
+  %strong= model_class.human_attribute_name(:wireless_mac_address) + ':'
+  %br
+  = @device.wireless_mac_address
+%p
+  %strong= model_class.human_attribute_name(:os) + ':'
+  %br
+  = @device.os
+%p
+  %strong= model_class.human_attribute_name(:printer) + ':'
+  %br
+  = @device.printer
+%p
+%strong= model_class.human_attribute_name(:projector) + ':'
+%br
+= @device.projector
+%p
+%strong= model_class.human_attribute_name(:sb) + ':'
+%br
+= @device.sb
+%p
+%strong= model_class.human_attribute_name(:age) + ':'
+%br
+= @device.age
+%p
+%strong= model_class.human_attribute_name(:notes) + ':'
+%br
+= @device.notes
+%p
+%strong= model_class.human_attribute_name(:memory) + ':'
+%br
+= @device.memory
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), devices_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_device_path(@device), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), device_path(@device), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

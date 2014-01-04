@@ -1,0 +1,5 @@
+= form_tag path, :method => 'get', :id => "devices_search" do
+  %p
+    = text_field_tag :search, params[:search], placeholder: "Search"
+    %input.btn.btn-default{type: "submit", value: "Search",style:'margin-top:-10px;'}/
+  #devices= render partial

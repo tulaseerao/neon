@@ -1,0 +1,5 @@
+- model_class = Timeline
+.page-header
+  %h1=t '.title', :default => "Computer Hardware Timeline"
+= render partial: '/shared/search', locals:{partial: 'timelines', path: timelines_path}  
+= render '/shared/import', file_name: "Timelines.xlsx", import_path: import_timelines_path

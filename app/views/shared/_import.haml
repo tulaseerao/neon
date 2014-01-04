@@ -1,0 +1,7 @@
+.sample
+  %h2 Upload a file
+  = form_tag import_path, multipart: true do
+    = file_field_tag :file
+    = submit_tag "Import"
+  %h4 Download below sample and upload  
+  = link_to file_name, "/docs/#{file_name}"

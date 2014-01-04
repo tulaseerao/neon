@@ -1,0 +1,7 @@
+- model_class = Idevice
+.page-header
+  %h1=t '.title', :default => "iDevices"
+= render partial: '/shared/search', locals:{partial: 'idevices', path: idevices_path}
+= render '/shared/import', file_name: "iDevices.xlsx", import_path: import_idevices_path
+
+

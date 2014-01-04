@@ -1,0 +1,5 @@
+- model_class = Printer
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+= render partial: '/shared/search', locals:{partial: 'printers', path: printers_path}  
+= render '/shared/import', file_name: "Printers.xlsx", import_path: import_printers_path

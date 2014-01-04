@@ -1,0 +1,112 @@
+= form_for @device, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :key, :class => 'control-label'
+    .controls
+      = f.text_field :key, :class => 'text_field'
+  .control-group
+    = f.label :computer_name, :class => 'control-label'
+    .controls
+      = f.text_field :computer_name, :class => 'text_field'
+  .control-group
+    = f.label :device_type, :class => 'control-label'
+    .controls
+      = f.text_field :device_type, :class => 'text_field'
+  .control-group
+    = f.label :assignment, :class => 'control-label'
+    .controls
+      = f.text_field :assignment, :class => 'text_field'
+  .control-group
+    = f.label :location, :class => 'control-label'
+    .controls
+      = f.text_field :location, :class => 'text_field'
+  .control-group
+    = f.label :change, :class => 'control-label'
+    .controls
+      = f.text_field :change, :class => 'text_field'
+  .control-group
+    = f.label :date_in_service, :class => 'control-label'
+    .controls
+      = f.text_field :date_in_service, :class => 'text_field'
+  .control-group
+    = f.label :asset_tag, :class => 'control-label'
+    .controls
+      = f.text_field :asset_tag, :class => 'text_field'
+  .control-group
+    = f.label :serial_number, :class => 'control-label'
+    .controls
+      = f.text_field :serial_number, :class => 'text_field'
+  .control-group
+    = f.label :manufacturer, :class => 'control-label'
+    .controls
+      = f.text_field :manufacturer, :class => 'text_field'
+  .control-group
+    = f.label :disposal_date, :class => 'control-label'
+    .controls
+      = f.text_field :disposal_date, :class => 'text_field'
+  .control-group
+    = f.label :mac1, :class => 'control-label'
+    .controls
+      = f.text_field :mac1, :class => 'text_field'
+  .control-group
+    = f.label :mac2, :class => 'control-label'
+    .controls
+      = f.text_field :mac2, :class => 'text_field'
+  .control-group
+    = f.label :cpu, :class => 'control-label'
+    .controls
+      = f.text_field :cpu, :class => 'text_field'
+  .control-group
+    = f.label :ghz, :class => 'control-label'
+    .controls
+      = f.text_field :ghz, :class => 'text_field'
+  .control-group
+    = f.label :core, :class => 'control-label'
+    .controls
+      = f.text_field :core, :class => 'text_field'
+  .control-group
+    = f.label :hdd, :class => 'control-label'
+    .controls
+      = f.text_field :hdd, :class => 'text_field'
+  .control-group
+    = f.label :screen, :class => 'control-label'
+    .controls
+      = f.text_field :screen, :class => 'text_field'
+  .control-group
+    = f.label :ethernet_mac_address, :class => 'control-label'
+    .controls
+      = f.text_field :ethernet_mac_address, :class => 'text_field'
+  .control-group
+    = f.label :wireless_mac_address, :class => 'control-label'
+    .controls
+      = f.text_field :wireless_mac_address, :class => 'text_field'
+  .control-group
+    = f.label :os, :class => 'control-label'
+    .controls
+      = f.text_field :os, :class => 'text_field'
+  .control-group
+    = f.label :printer, :class => 'control-label'
+    .controls
+      = f.text_field :printer, :class => 'text_field'
+  .control-group
+    = f.label :projector, :class => 'control-label'
+    .controls
+      = f.text_field :projector, :class => 'text_field'
+  .control-group
+    = f.label :age, :class => 'control-label'
+    .controls
+      = f.text_field :age, :class => 'text_field'
+  .control-group
+    = f.label :sb, :class => 'control-label'
+    .controls
+      = f.text_field :sb, :class => 'text_field'
+  .control-group
+    = f.label :memory, :class => 'control-label'
+    .controls
+      = f.text_field :memory, :class => 'text_field'
+
+
+
+      
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), devices_path, :class => 'btn'
